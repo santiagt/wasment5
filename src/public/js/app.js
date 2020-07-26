@@ -1,4 +1,3 @@
-import "../css/styles.css";
 let boardArr = [];
 let player = "X";
 
@@ -96,7 +95,7 @@ const checkWin = () => {
       }
     }
   });
-  if (!boardPlain.includes("")) {
+  if (!boardPlain.includes("") && !allEqual(line)) {
     alert("It's a tie!");
     cleanBoard();
     printBoard();
