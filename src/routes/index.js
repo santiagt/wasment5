@@ -3,7 +3,7 @@ const path = require("path");
 
 const app = express();
 
-app.set("views", "../views");
+app.set("views", path.join(__dirname, "../views"));
 app.set("view engine", "pug");
 
 app.get("/", (req, res) => {
@@ -14,5 +14,5 @@ app.get("/qwe", (req, res) => {
   res.send("qweqweqwe");
 });
 
-app.use(express.static(path.join(__dirname + "./public")));
+app.use("/public", express.static(path.join(__dirname + "/../public")));
 app.listen(8080);
